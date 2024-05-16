@@ -1,5 +1,5 @@
 class Solution:
-    def maxProfit2(self, prices: List[int]) -> int:
+    def maxProfit(self, prices: List[int]) -> int:
         i=0
         diff=0
         s=prices[0]
@@ -10,12 +10,3 @@ class Solution:
             i+=1
         return diff
         
-    def maxProfit(self, prices: List[int]) -> int:
-        min_price = prices[0]
-        max_profit = 0
-        
-        for price in prices[1:]:
-            max_profit = max(max_profit, price - min_price)
-            min_price = min(min_price, price)
-            
-        return max_profit
