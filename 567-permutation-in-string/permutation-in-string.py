@@ -1,5 +1,5 @@
 class Solution:
-    def checkInclusion2(self, s1: str, s2: str) -> bool:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
         
         if len(s1) > len(s2):
             return False
@@ -36,7 +36,7 @@ class Solution:
 
         return matches == 26
 
-    def checkInclusion(self, s1: str, s2: str) -> bool:
+    def checkInclusion2(self, s1: str, s2: str) -> bool:
         cntr, w = Counter(s1), len(s1)   
 
         for i in range(len(s2)):
