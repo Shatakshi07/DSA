@@ -1,5 +1,5 @@
 class Solution:
-    def characterReplacement(self, s: str, k: int) -> int:
+    def characterReplacement2(self, s: str, k: int) -> int:
         count={}#stores frequency of each letter in that window
         res=0
         l=0
@@ -12,7 +12,7 @@ class Solution:
             res = max(res, r-l+1)
         return res
 
-    def characterReplacement2(self, s: str, k: int) -> int:
+    def characterReplacement(self, s: str, k: int) -> int:
         count={}#stores frequency of each letter in that window
         res=0
         l=0
