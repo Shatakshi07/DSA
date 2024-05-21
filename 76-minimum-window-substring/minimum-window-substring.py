@@ -13,15 +13,15 @@ class Solution:
         for r in range(len(s)):
             c=s[r]
             window[c]= 1+window.get(c ,0)
+
             if c in countT and window[c]== countT[c]:
                 have+=1
 
             while have == need:
                 if reslen>(r-l+1):
                     reslen= r-l+1
-                    print(reslen)
                     res= [l,r]
-                    print(res)
+                    
                 c=s[l]
                 window[c]-=1
                 if c in countT and window[c]< countT[c]:
