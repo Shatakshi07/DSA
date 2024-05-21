@@ -11,8 +11,9 @@ class Solution:
         l=0
         r=0
         for r in range(len(s)):
-            window[s[r]]= 1+window.get(s[r] ,0)
-            if s[r] in countT and window[s[r]]== countT[s[r]]:
+            c=s[r]
+            window[c]= 1+window.get(c ,0)
+            if c in countT and window[c]== countT[c]:
                 have+=1
 
             while have == need:
