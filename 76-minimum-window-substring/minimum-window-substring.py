@@ -22,9 +22,9 @@ class Solution:
                     print(reslen)
                     res= [l,r]
                     print(res)
-
-                window[s[l]]-=1
-                if s[l] in countT and window[s[l]]< countT[s[l]]:
+                c=s[l]
+                window[c]-=1
+                if c in countT and window[c]< countT[c]:
                     have-=1
                 l+=1
         
