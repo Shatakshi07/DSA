@@ -2,6 +2,30 @@ class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         n=len(matrix[0])
         m=len(matrix)
+        nums=[0]*(m*n)
+        k=0
+        for i in range(m):
+            for j in range(n):
+                nums[k]=matrix[i][j]
+                k+=1
+        print(nums)
+        left=0
+        right=len(nums)-1
+        while left<=right:
+            mid=int(left+right)//2
+            if(nums[mid]==target):
+                print(nums[mid])
+                return True
+            elif(nums[mid]>target):
+                right=mid-1
+            else:
+                left=mid+1
+        return False
+
+
+    def searchMatrix2(self, matrix: List[List[int]], target: int) -> bool:
+        n=len(matrix[0])
+        m=len(matrix)
         mid=0
         def bs(i,j)-> int:
             if (i<=j):
