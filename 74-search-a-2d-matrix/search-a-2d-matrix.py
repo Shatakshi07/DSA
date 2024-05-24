@@ -4,8 +4,8 @@ class Solution:
         m=len(matrix)
         nums=[]
         for i in matrix:
-            nums.extend(i)
-        print(nums)
+            nums.extend(i) #converting 2D to 3D
+        
         left=0
         right=len(nums)-1
         while left<=right:
