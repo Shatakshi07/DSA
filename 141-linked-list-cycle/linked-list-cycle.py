@@ -5,7 +5,17 @@
 #         self.next = None
 
 class Solution:
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
+    def hasCycle(self, head: ListNode) -> bool:
+        slow, fast = head, head
+#slow and fast ptr will meet sometime if there is cycle
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+        return False
+
+    def hasCycle2(self, head: Optional[ListNode]) -> bool:
         ptrs={}
         curr=head
 
