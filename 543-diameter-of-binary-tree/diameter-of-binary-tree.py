@@ -6,18 +6,22 @@
 #         self.right = right
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        res=[0]
+        # we go bottom up , calculate diameter of each node using its child node diameter.
+        # max diam is max diam of left/right subtree + 1
+        # diam and height both are used 
+        # height helps for leaf node cases(-1 for where no node).
+        diam=[0] #global variable
 
         def dfs(root):
             if not root:
-                return -1
-            left = dfs(root.left)
-            right = dfs(root.right)
+                return -1  #height
+            left_height = dfs(root.left)
+            right_height = dfs(root.right)
 
-            res[0]=max(res[0], left+right+2)
+            height = 1 + max(left_height , right_height)
+            diam[0] = max(diam[0], left_height + right_height + 2)
 
-            return 1 + max(left ,right)
-        
+            return height
+            
         dfs(root)
-        return res[0]
-        
+        return diam[0]
